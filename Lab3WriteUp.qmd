@@ -481,15 +481,25 @@ Recall,
 $$\mathbf{M}_h = \begin{bmatrix} 1 & 0 \\ k & 1 \end{bmatrix}$$
 and use $k=0.5.$
 
+**Solution**
+```{r}
+A=as.matrix(ladder[c("x","y")])
+M=matrix(data=c(1,0.5,0,1),nrow=2,ncol=2)
+(T=(A%*%M))
+```
 
 ## Part d
 Create a data frame `leaning.ladder` with the `x` and `y` equal to the first and second column of $\mathbf{T}$, respectively, and the same values of `group` from `ladder`. 
+
+**Solution**
+```{r}
+(leaning.ladder=data.frame(x=T[,1],y=T[,2],group=ladder[,3]))
+```
 
 ## Part e
 Remove `eval: false` in the code below. The result should look like a ladder and a very rectangular house if part a is correct. The new leaning ladder should look like it is leaning on the house.
 
 ```{r}
-#| eval: false
 #| label: fig-ladder2
 #| fig-cap: "A ladder and a leaning ladder."
 #| fig-width: 3
