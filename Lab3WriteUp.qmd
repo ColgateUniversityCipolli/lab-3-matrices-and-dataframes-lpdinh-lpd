@@ -123,17 +123,12 @@ $$\mathbf{A} = \begin{bmatrix} 1 & -7 \\ 5 & 9 \end{bmatrix}$$
 **Solution**
 
 ```{r}
-#| label: tbl-nsum-billlength
-#| tbl-cap: "Bill length (mm) by species."
-#| tbl-align: "center"
-#| size: scriptsize
 (A=matrix(data=c(1,5,-7,9), nrow=2, ncol=2))
 ```
 
 ## Part b
 Compute the product below in `R` and store it in an object `T`.
 $$\mathbf{T} = \mathbf{A}\mathbf{M}.$$
-
 
 **Solution**
 
@@ -143,7 +138,7 @@ Create object M
 ```
 $T=AM$
 ```{r}
-(T=(M %*% A))
+(T=(A %*% M))
 ```
 
 ## Part c
@@ -159,7 +154,7 @@ Create `basis.vector.1` (first column of `T`) and `basis.vector.2` (second colum
 ## Part d
 Compute the points $p_0$, $p_1$, $p_2$, and $p_3$.
 
-**Solutions**
+**Solution**
 
 $p_0=(0,0)$
 
@@ -175,7 +170,7 @@ $p_3=(-7,9)$
 ## Part e
 Copy and paste the code for the unit square. Edit the code to draw the segments that form the boundary based on the points in Part d.
 
-**Solutions**
+**Solution**
 
 Install `tidyverse` [@tidyverse]
 ```{r}
@@ -186,10 +181,10 @@ library("tidyverse")
 
 Create vectors
 ```{r}
-(p0=c(0,0))
-(p1=c(1,5))
-(p2=c(-6,14))
-(p3=c(-7,9))
+p0=c(0,0)
+p1=c(1,5)
+p2=c(-6,14)
+p3=c(-7,9)
 ```
 
 Installing 
@@ -208,8 +203,8 @@ ggplot() +
   geom_segment(aes(x = p2[1], y = p2[2], xend = p3[1], yend = p3[2])) +
   geom_segment(aes(x = p3[1], y = p3[2], xend = p0[1], yend = p0[2])) +
   theme_bw() +
-  xlim(-10, 5) +
-  ylim(-0.5,15) +
+  xlim(-15, 15) +
+  ylim(-5,25) +
   labs(x = "x", y = "y")
 ```
 
@@ -241,7 +236,7 @@ $$\mathbf{T} = \mathbf{A}\mathbf{M}.$$
 **Solution**
 
 ```{r}
-(T=(M %*% A))
+(T=(A %*% M))
 ```
 
 ## Part c
@@ -274,17 +269,10 @@ Copy and paste the code for plotting the unit square. Edit the code to draw the 
 Assigning $p_0$, $p_1$, $p_2$, and $p_3$
 
 ```{r}
-(p0=c(0,0))
-(p1=basis.vector.1)
-(p3=basis.vector.2)
-(p2=(p1+p3))
-```
-
-Install `tidyverse` [@tidyverse]
-```{r}
-#| eval: false
-install.packages("tidyverse")
-library("tidyverse")
+p0=c(0,0)
+p1=basis.vector.1
+p3=basis.vector.2
+p2=(p1+p3)
 ```
 
 Drawing the segments
@@ -303,8 +291,8 @@ ggplot() +
   geom_segment(aes(x = p2[1], y = p2[2], xend = p3[1], yend = p3[2])) +
   geom_segment(aes(x = p3[1], y = p3[2], xend = p0[1], yend = p0[2])) +
   theme_bw() +
-  xlim(0, 5) +
-  ylim(0,10) +
+  xlim(-15, 15) +
+  ylim(-5,25) +
   labs(x = "x", y = "y")
 ```
 
@@ -331,6 +319,36 @@ In both cases, $k \in \mathbb{R}$ is called a shear factor and its sign determin
 Use the following to generate a new shape. Compare the shape and its area to your answer in Question 1.
 $$\mathbf{M}_v = \begin{bmatrix} 1 & k=0.5 \\ 0 & 1 \end{bmatrix} ~~~~~ \textrm{and} ~~~~~
   \mathbf{A}   = \begin{bmatrix} 1 & -7 \\ 5 & 9 \end{bmatrix}$$
+
+**Solution**
+```{r}
+M=matrix(data=c(1,0,0.5,1),nrow=2,ncol=2)
+A=matrix(data=c(1,5,-7,9),nrow=2,ncol=2)
+T=(A %*% M)
+basis.vector.1=T[,1]
+basis.vector.2=T[,2]
+p0=c(0,0)
+p1=basis.vector.1
+p3=basis.vector.2
+p2=(p1+p3)
+
+#| label: fig-unitsquare3a
+#| fig-cap: "Figure 3a."
+#| fig-width: 3
+#| fig-height: 3
+#| scale: "80%"
+#| fig-align: "center"
+#| size: "scriptsize"
+ggplot() +
+  geom_segment(aes(x = p0[1], y = p0[2], xend = p1[1], yend = p1[2])) +
+  geom_segment(aes(x = p1[1], y = p1[2], xend = p2[1], yend = p2[2])) +
+  geom_segment(aes(x = p2[1], y = p2[2], xend = p3[1], yend = p3[2])) +
+  geom_segment(aes(x = p3[1], y = p3[2], xend = p0[1], yend = p0[2])) +
+  theme_bw() +
+  xlim(-15, 15) +
+  ylim(-5,25) +
+  labs(x = "x", y = "y")
+```
 
 ## Part b
 Use the following to generate a new shape. Compare the shape and its area to your answer in Questions 1 and the vertical shear transform in part (a).
