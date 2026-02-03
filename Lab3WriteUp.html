@@ -207,7 +207,8 @@ Table&nbsp;1: Bill length (mm) by species.
 <section id="part-b" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="part-b"><span class="header-section-number">1.2</span> Part b</h2>
 <p>Compute the product below in <code>R</code> and store it in an object <code>T</code>. <span class="math display">\[\mathbf{T} = \mathbf{A}\mathbf{M}.\]</span></p>
-<p><strong>Solution</strong> Create object M</p>
+<p><strong>Solution</strong></p>
+<p>Create object M</p>
 <p></p>
 <div class="cell">
 <details class="code-fold">
@@ -238,10 +239,42 @@ Table&nbsp;1: Bill length (mm) by species.
 <section id="part-c" class="level2" data-number="1.3">
 <h2 data-number="1.3" class="anchored" data-anchor-id="part-c"><span class="header-section-number">1.3</span> Part c</h2>
 <p>Create <code>basis.vector.1</code> (first column of <code>T</code>) and <code>basis.vector.2</code> (second column of <code>T</code>) in <code>R</code>.</p>
+<p><strong>Solution</strong>*</p>
+<p></p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>(<span class="at">basis.vector.1=</span>T[,<span class="dv">1</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1 5</code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>(<span class="at">basis.vector.2=</span>T[,<span class="dv">2</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -7  9</code></pre>
+</div>
+</div>
+<p></p>
 </section>
 <section id="part-d" class="level2" data-number="1.4">
 <h2 data-number="1.4" class="anchored" data-anchor-id="part-d"><span class="header-section-number">1.4</span> Part d</h2>
 <p>Compute the points <span class="math inline">\(p_0\)</span>, <span class="math inline">\(p_1\)</span>, <span class="math inline">\(p_2\)</span>, and <span class="math inline">\(p_3\)</span>.</p>
+<p><strong>Solutions</strong> <span class="math inline">\(p_0=(0,0)\)</span> <span class="math inline">\(p_1=(1,5)\)</span> <span class="math inline">\(p_2=(-6,14)\)</span></p>
+<p></p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>basis.vector<span class="fl">.1</span><span class="sc">+</span>basis.vector<span class="fl">.2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -6 14</code></pre>
+</div>
+</div>
+<p></p>
+<p><span class="math inline">\(p_3=(-7,9)\)</span></p>
 </section>
 <section id="part-e" class="level2" data-number="1.5">
 <h2 data-number="1.5" class="anchored" data-anchor-id="part-e"><span class="header-section-number">1.5</span> Part e</h2>
@@ -416,20 +449,20 @@ Table&nbsp;1: Bill length (mm) by species.
 <div class="cell" data-layout-align="center" data-scale="80%">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb8-2"><a href="#cb8-2"></a>  <span class="fu">geom_path</span>(<span class="at">data =</span> ladder, </span>
-<span id="cb8-3"><a href="#cb8-3"></a>              <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">group =</span> group)) <span class="sc">+</span></span>
-<span id="cb8-4"><a href="#cb8-4"></a>                  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">10</span>, <span class="at">xend =</span> <span class="dv">10</span>,</span>
-<span id="cb8-5"><a href="#cb8-5"></a>                   <span class="at">y=</span><span class="dv">0</span>, <span class="at">yend =</span> <span class="dv">20</span>))<span class="sc">+</span></span>
-<span id="cb8-6"><a href="#cb8-6"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">10</span>, <span class="at">xend =</span> <span class="dv">20</span>,</span>
-<span id="cb8-7"><a href="#cb8-7"></a>                   <span class="at">y=</span><span class="dv">20</span>, <span class="at">yend =</span> <span class="dv">20</span>))<span class="sc">+</span></span>
-<span id="cb8-8"><a href="#cb8-8"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">20</span>, <span class="at">xend =</span> <span class="dv">20</span>,</span>
-<span id="cb8-9"><a href="#cb8-9"></a>                   <span class="at">y=</span><span class="dv">0</span>, <span class="at">yend =</span> <span class="dv">20</span>))<span class="sc">+</span></span>
-<span id="cb8-10"><a href="#cb8-10"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">10</span>, <span class="at">xend =</span> <span class="dv">20</span>,</span>
-<span id="cb8-11"><a href="#cb8-11"></a>                   <span class="at">y=</span><span class="dv">0</span>, <span class="at">yend =</span> <span class="dv">0</span>)) <span class="sc">+</span></span>
-<span id="cb8-12"><a href="#cb8-12"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
-<span id="cb8-13"><a href="#cb8-13"></a>  <span class="fu">xlim</span>(<span class="sc">-</span><span class="dv">2</span>,<span class="dv">22</span>) <span class="sc">+</span></span>
-<span id="cb8-14"><a href="#cb8-14"></a>  <span class="fu">ylim</span>(<span class="sc">-</span><span class="dv">2</span>,<span class="dv">22</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb14-2"><a href="#cb14-2"></a>  <span class="fu">geom_path</span>(<span class="at">data =</span> ladder, </span>
+<span id="cb14-3"><a href="#cb14-3"></a>              <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">group =</span> group)) <span class="sc">+</span></span>
+<span id="cb14-4"><a href="#cb14-4"></a>                  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">10</span>, <span class="at">xend =</span> <span class="dv">10</span>,</span>
+<span id="cb14-5"><a href="#cb14-5"></a>                   <span class="at">y=</span><span class="dv">0</span>, <span class="at">yend =</span> <span class="dv">20</span>))<span class="sc">+</span></span>
+<span id="cb14-6"><a href="#cb14-6"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">10</span>, <span class="at">xend =</span> <span class="dv">20</span>,</span>
+<span id="cb14-7"><a href="#cb14-7"></a>                   <span class="at">y=</span><span class="dv">20</span>, <span class="at">yend =</span> <span class="dv">20</span>))<span class="sc">+</span></span>
+<span id="cb14-8"><a href="#cb14-8"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">20</span>, <span class="at">xend =</span> <span class="dv">20</span>,</span>
+<span id="cb14-9"><a href="#cb14-9"></a>                   <span class="at">y=</span><span class="dv">0</span>, <span class="at">yend =</span> <span class="dv">20</span>))<span class="sc">+</span></span>
+<span id="cb14-10"><a href="#cb14-10"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">10</span>, <span class="at">xend =</span> <span class="dv">20</span>,</span>
+<span id="cb14-11"><a href="#cb14-11"></a>                   <span class="at">y=</span><span class="dv">0</span>, <span class="at">yend =</span> <span class="dv">0</span>)) <span class="sc">+</span></span>
+<span id="cb14-12"><a href="#cb14-12"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb14-13"><a href="#cb14-13"></a>  <span class="fu">xlim</span>(<span class="sc">-</span><span class="dv">2</span>,<span class="dv">22</span>) <span class="sc">+</span></span>
+<span id="cb14-14"><a href="#cb14-14"></a>  <span class="fu">ylim</span>(<span class="sc">-</span><span class="dv">2</span>,<span class="dv">22</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 <p></p>
@@ -449,23 +482,23 @@ Table&nbsp;1: Bill length (mm) by species.
 <div class="cell" data-layout-align="center" data-scale="80%">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb9-2"><a href="#cb9-2"></a>  <span class="fu">geom_path</span>(<span class="at">data =</span> ladder, </span>
-<span id="cb9-3"><a href="#cb9-3"></a>              <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">group =</span> group, <span class="at">color =</span> <span class="st">"Starting Ladder"</span>)) <span class="sc">+</span></span>
-<span id="cb9-4"><a href="#cb9-4"></a>  <span class="fu">geom_path</span>(<span class="at">data =</span> leaning.ladder, </span>
-<span id="cb9-5"><a href="#cb9-5"></a>              <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">group =</span> group, <span class="at">color =</span> <span class="st">"Leaning Ladder"</span>)) <span class="sc">+</span></span>
-<span id="cb9-6"><a href="#cb9-6"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">10</span>, <span class="at">xend =</span> <span class="dv">10</span>,</span>
-<span id="cb9-7"><a href="#cb9-7"></a>                   <span class="at">y=</span><span class="dv">0</span>, <span class="at">yend =</span> <span class="dv">20</span>))<span class="sc">+</span></span>
-<span id="cb9-8"><a href="#cb9-8"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">10</span>, <span class="at">xend =</span> <span class="dv">20</span>,</span>
-<span id="cb9-9"><a href="#cb9-9"></a>                   <span class="at">y=</span><span class="dv">20</span>, <span class="at">yend =</span> <span class="dv">20</span>))<span class="sc">+</span></span>
-<span id="cb9-10"><a href="#cb9-10"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">20</span>, <span class="at">xend =</span> <span class="dv">20</span>,</span>
-<span id="cb9-11"><a href="#cb9-11"></a>                   <span class="at">y=</span><span class="dv">0</span>, <span class="at">yend =</span> <span class="dv">20</span>))<span class="sc">+</span></span>
-<span id="cb9-12"><a href="#cb9-12"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">10</span>, <span class="at">xend =</span> <span class="dv">20</span>,</span>
-<span id="cb9-13"><a href="#cb9-13"></a>                   <span class="at">y=</span><span class="dv">0</span>, <span class="at">yend =</span> <span class="dv">0</span>)) <span class="sc">+</span></span>
-<span id="cb9-14"><a href="#cb9-14"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
-<span id="cb9-15"><a href="#cb9-15"></a>  <span class="fu">xlim</span>(<span class="sc">-</span><span class="dv">2</span>,<span class="dv">22</span>) <span class="sc">+</span></span>
-<span id="cb9-16"><a href="#cb9-16"></a>  <span class="fu">ylim</span>(<span class="sc">-</span><span class="dv">2</span>,<span class="dv">22</span>) <span class="sc">+</span></span>
-<span id="cb9-17"><a href="#cb9-17"></a>  <span class="fu">scale_color_manual</span>(<span class="st">""</span>, <span class="at">values=</span><span class="fu">c</span>(<span class="st">"darkred"</span>, <span class="st">"grey"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb15-2"><a href="#cb15-2"></a>  <span class="fu">geom_path</span>(<span class="at">data =</span> ladder, </span>
+<span id="cb15-3"><a href="#cb15-3"></a>              <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">group =</span> group, <span class="at">color =</span> <span class="st">"Starting Ladder"</span>)) <span class="sc">+</span></span>
+<span id="cb15-4"><a href="#cb15-4"></a>  <span class="fu">geom_path</span>(<span class="at">data =</span> leaning.ladder, </span>
+<span id="cb15-5"><a href="#cb15-5"></a>              <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">group =</span> group, <span class="at">color =</span> <span class="st">"Leaning Ladder"</span>)) <span class="sc">+</span></span>
+<span id="cb15-6"><a href="#cb15-6"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">10</span>, <span class="at">xend =</span> <span class="dv">10</span>,</span>
+<span id="cb15-7"><a href="#cb15-7"></a>                   <span class="at">y=</span><span class="dv">0</span>, <span class="at">yend =</span> <span class="dv">20</span>))<span class="sc">+</span></span>
+<span id="cb15-8"><a href="#cb15-8"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">10</span>, <span class="at">xend =</span> <span class="dv">20</span>,</span>
+<span id="cb15-9"><a href="#cb15-9"></a>                   <span class="at">y=</span><span class="dv">20</span>, <span class="at">yend =</span> <span class="dv">20</span>))<span class="sc">+</span></span>
+<span id="cb15-10"><a href="#cb15-10"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">20</span>, <span class="at">xend =</span> <span class="dv">20</span>,</span>
+<span id="cb15-11"><a href="#cb15-11"></a>                   <span class="at">y=</span><span class="dv">0</span>, <span class="at">yend =</span> <span class="dv">20</span>))<span class="sc">+</span></span>
+<span id="cb15-12"><a href="#cb15-12"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">10</span>, <span class="at">xend =</span> <span class="dv">20</span>,</span>
+<span id="cb15-13"><a href="#cb15-13"></a>                   <span class="at">y=</span><span class="dv">0</span>, <span class="at">yend =</span> <span class="dv">0</span>)) <span class="sc">+</span></span>
+<span id="cb15-14"><a href="#cb15-14"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb15-15"><a href="#cb15-15"></a>  <span class="fu">xlim</span>(<span class="sc">-</span><span class="dv">2</span>,<span class="dv">22</span>) <span class="sc">+</span></span>
+<span id="cb15-16"><a href="#cb15-16"></a>  <span class="fu">ylim</span>(<span class="sc">-</span><span class="dv">2</span>,<span class="dv">22</span>) <span class="sc">+</span></span>
+<span id="cb15-17"><a href="#cb15-17"></a>  <span class="fu">scale_color_manual</span>(<span class="st">""</span>, <span class="at">values=</span><span class="fu">c</span>(<span class="st">"darkred"</span>, <span class="st">"grey"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 <p></p>
