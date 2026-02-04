@@ -186,8 +186,8 @@ p2=c(-6,14)
 p3=c(-7,9)
 ```
 
-Installing 
 Draw segments
+
 ```{r}
 #| label: fig-unitsquare1e
 #| fig-cap: "Figure 1e."
