@@ -122,7 +122,8 @@ $$\mathbf{A} = \begin{bmatrix} 1 & -7 \\ 5 & 9 \end{bmatrix}$$
 **Solution**
 
 ```{r}
-(A=matrix(data=c(1,5,-7,9), nrow=2, ncol=2))
+(A=matrix(data=c(1,5,-7,9), 
+          nrow=2, ncol=2))
 ```
 
 ## Part b
@@ -133,7 +134,8 @@ $$\mathbf{T} = \mathbf{A}\mathbf{M}.$$
 
 Create object M
 ```{r}
-(M=matrix(data=c(1,0,0,1), nrow=2, ncol=2))
+(M=matrix(data=c(1,0,0,1), 
+          nrow=2, ncol=2))
 ```
 $T=AM$
 ```{r}
@@ -225,7 +227,8 @@ $$\mathbf{A} = \begin{bmatrix} 1 & 2 \\ 2 & 4 \end{bmatrix}$$
 
 **Solution**
 ```{r}
-(A=matrix(data=c(1,2,2,4), nrow=2, ncol=2))
+(A=matrix(data=c(1,2,2,4), 
+          nrow=2, ncol=2))
 ```
 
 ## Part b
@@ -321,8 +324,10 @@ $$\mathbf{M}_v = \begin{bmatrix} 1 & k=0.5 \\ 0 & 1 \end{bmatrix} ~~~~~ \textrm{
 
 **Solution**
 ```{r}
-M=matrix(data=c(1,0,0.5,1),nrow=2,ncol=2)
-A=matrix(data=c(1,5,-7,9),nrow=2,ncol=2)
+M=matrix(data=c(1,0,0.5,1),
+        nrow=2,ncol=2)
+A=matrix(data=c(1,5,-7,9),
+        nrow=2,ncol=2)
 T=(A %*% M)
 basis.vector.1=T[,1]
 basis.vector.2=T[,2]
@@ -356,8 +361,10 @@ $$ \mathbf{M}_h = \begin{bmatrix} 1 & 0 \\ k=0.5 & 1 \end{bmatrix}~~~~~ \textrm{
 
 **Solution**
 ```{r}
-M=matrix(data=c(1,0.5,0,1),nrow=2,ncol=2)
-A=matrix(data=c(1,5,-7,9),nrow=2,ncol=2)
+M=matrix(data=c(1,0.5,0,1),
+        nrow=2,ncol=2)
+A=matrix(data=c(1,5,-7,9),
+        nrow=2,ncol=2)
 T=(A %*% M)
 basis.vector.1=T[,1]
 basis.vector.2=T[,2]
@@ -391,8 +398,10 @@ $$\mathbf{M}_{vh} = \begin{bmatrix} 1 & k=0.5 \\ k=0.5 & 1 \end{bmatrix} ~~~~~ \
 
 **Solution**
 ```{r}
-M=matrix(data=c(1,0.5,0.5,1),nrow=2,ncol=2)
-A=matrix(data=c(1,5,-7,9),nrow=2,ncol=2)
+M=matrix(data=c(1,0.5,0.5,1),
+        nrow=2,ncol=2)
+A=matrix(data=c(1,5,-7,9),
+        nrow=2,ncol=2)
 T=(A %*% M)
 basis.vector.1=T[,1]
 basis.vector.2=T[,2]
@@ -483,7 +492,8 @@ and use $k=0.5.$
 **Solution**
 ```{r}
 A=as.matrix(ladder[c("x","y")])
-M=matrix(data=c(1,0.5,0,1),nrow=2,ncol=2)
+M=matrix(data=c(1,0.5,0,1),
+        nrow=2,ncol=2)
 (T=(A%*%M))
 ```
 
