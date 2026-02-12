@@ -372,8 +372,7 @@ $$ \mathbf{M}_h = \begin{bmatrix} 1 & 0 \\ k=0.5 & 1 \end{bmatrix}~~~~~ \textrm{
 
 **Solution**
 
-Compared to the shape in question 1, 
-this shape is slanted horizontally more (the long bottom edge stays the same, but the right edge leans to the right). Compared to part a, the acute angles of the parallelogram is narrower. Similar to explanation in part a, the areas of the shape in 3b equals to those of the previous shapes and is the determinant of $\mathbf{A}$ because the the determinant of matrix $\mathbf{M}_h$ is 1.
+Compared to the shape in question 1, this shape is slanted horizontally more (the long bottom edge stays the same, but the left edge leans to the left). Compared to part a, the acute angles of the parallelogram is narrower. Similar to explanation in part a, the areas of the shape in 3b equals to those of the previous shapes and is the determinant of $\mathbf{A}$ because the the determinant of matrix $\mathbf{M}_h$ is 1.
 
 Creating figure
 ```{r}
