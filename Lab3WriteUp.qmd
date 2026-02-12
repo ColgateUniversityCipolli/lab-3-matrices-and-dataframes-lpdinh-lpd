@@ -407,7 +407,7 @@ ggplot() +
   labs(x = "x", y = "y")
 ```
 
-Calculate area
+Calculating area
 ```{r}
 (det(T))
 ```
@@ -419,7 +419,7 @@ $$\mathbf{M}_{vh} = \begin{bmatrix} 1 & k=0.5 \\ k=0.5 & 1 \end{bmatrix} ~~~~~ \
 
 **Solution**
 
-This shape is slanted both vertically and horizontally, and looks every different from question 1 and part (a) and (c). Its acute angles are the narrowest. The area is 33 and is smaller than those of the three previous shapes.
+This shape is slanted both vertically and horizontally, and looks every different from question 1 and part (a) and (b). Its acute angles are the narrowest. The area is 33 and is smaller than those of the three previous shapes.
 
 Creating matrices
 ```{r}
